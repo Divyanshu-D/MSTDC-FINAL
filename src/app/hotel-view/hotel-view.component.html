@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2>Book Hotel</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6 col-lg-3 text-center" *ngFor="let hotel of hotels | async">
+
+                    <div class="card ">
+                        <img src="{{hotel.hotelImage}}" class="card-img-top mx-auto d-block" alt="..." style="width:150px;height:150px">
+                        <div class="card-body">
+                            <h5 class="card-title">{{hotel.hotelName}}</h5>
+                            <p class="card-text">{{hotel.hotelLocation}}</p>
+                            <p class="card-text">Rs.{{hotel.hotelPrice}} / Night</p>
+
+                            <div class="booking">
+                                <button (click)="bookHotel(hotel.hotelId)" class="btn btn-danger" style="margin-left: 10px">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2>Reservation Details</h2>
+            <button (click)="list()" class="btn btn-primary float-right">Back to Hotel List</button><br><br>
+        </div>
+        <!-- <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="hotel">Booking Id</label>
+        <input type="text" class="form-control" id="bookingId" required [(ngModel)]="booking.bookingId" name="bookingId">
+      </div>
+  
+      <div class="form-group">
+          <label for="hotel">Booking Status</label>
+          <input type="text" class="form-control" id="status" required [(ngModel)]="booking.bookingStatus" name="status">
+      </div>
+        
+      <div class="form-group">
+          <button type="submit" class="btn btn-success">Add Hotel</button>
+      </div>
+    </form> -->
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Booking No.</th>
+                        <th>Guest Name</th>
+                        <th>Guest Mobile</th>
+                        <th>Check-In</th>
+                        <th>Check-Out</th>
+                        <th>Bill Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let booking of bookings | async">
+
+                        <td>{{booking.bookingId}}</td>
+                        <td>{{booking.guestName}}</td>
+                        <td>{{booking.guestMobile}}</td>
+                        <td>{{booking.checkIn}}</td>
+                        <td>{{booking.checkOut}}</td>
+                        <td>{{booking.billPrice}}</td>
+                        <td *ngIf="booking.bookingStatus==1"><button type="button" class="btn btn-sm btn-outline-success py-0" style="font-size: 0.8em;">Accepted</button></td>
+                        <td *ngIf="booking.bookingStatus==2"><button type="button" class="btn btn-sm btn-outline-danger py-0" style="font-size: 0.8em;">Cncelled</button></td>
+                        <td>
+
+                            <!-- <button (click)="deleteHotel(hotel.hotelId)" class="btn btn-danger" style="margin-left: 10px">Delete</button> -->
+                            <button (click)="openModal(editBooking, booking)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                            <button (click)="bookingDetails(booking.bookingId)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                        </td>
+
+                        <ng-template #editBooking let-modal>
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modal-basic-title">Update Status</h4>
+                                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form (ngSubmit)="onSubmit()">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <input type="hidden" required [(ngModel)]="booking.bookingId" value="{{booking.bookingId}}" class="form-control" name="bookingId" />
+                                            </div>
+                                            <div class="form-group">
+                                                <div ngbDropdown class="d-inline-block">
+                                                    <select required [(ngModel)]="booking.bookingStatus" class="btn btn-outline-primary" name="status" id="dropdownBasic1" ngbDropdownToggle>
+                            <option value="1" ngbDropdownItem>Accept Booking</option>
+                            <option value="2" ngbDropdownItem>Cancel Booking</option>
+                          </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success">Update</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </ng-template>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.card-title-main{
+    text-align: center;
+    margin-top: 4%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100px;
+}
+.p1,.clearfix,.p3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card-header{
+    text-align: center;
+
+}
+.bold{
+    font-size: 180%;
+    text-align: center;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    height: 50%;
+  }
+
+  .center-img{
+      height: 39%;
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card-img-top{
+      border-image-slice: fill;
+      border-image: space;
+      padding: auto;
+    width: 95%;
+    height: 50%;
+  }

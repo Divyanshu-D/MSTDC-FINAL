@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Book Hotel</h2>
+
+    <hr/>
+    <div *ngIf="hotel">
+        <div>
+            <label><b>Hotel Name: </b></label> {{hotel.hotelName}}
+        </div>
+        <div>
+            <label><b>Description: </b></label> {{hotel.hotelDesc}}
+        </div>
+        <div>
+            <label><b>Location: </b></label> {{hotel.hotelLocation}}
+        </div>
+        <div>
+            <label><b>Category: </b></label> {{hotel.hotelCategory}}
+        </div>
+        <div>
+            <label><b>Price: </b></label> {{hotel.hotelPrice}}
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <button (click)="list()" class="btn btn-primary">Back to Hotel List</button><br>
+</div>

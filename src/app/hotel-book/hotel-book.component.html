@@ -1,0 +1,58 @@
+<div class="container">
+    <h3>Book Hotel</h3>
+    <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="booking">Guest Name</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="booking.guestName" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="booking">Guest Email</label>
+                <input type="email" class="form-control" id="email" required [(ngModel)]="booking.guestEmail" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="booking">Guest Mobile</label>
+                <input type="text" class="form-control" id="mobile" required [(ngModel)]="booking.guestMobile" name="mobile">
+            </div>
+
+            <div class="form-group">
+                <label for="booking">Guest City</label>
+                <input type="text" class="form-control" id="city" required [(ngModel)]="booking.guestCity" name="city">
+            </div>
+
+            <div class="form-group">
+                <label for="booking">No of Guest</label>
+                <input type="text" class="form-control" id="guests" required [(ngModel)]="booking.noOfGuest" name="guests">
+            </div>
+
+            <div class="form-group">
+                <label for="booking">No of Rooms</label>
+                <input type="text" class="form-control" id="rooms" required [(ngModel)]="booking.noOfRooms" name="rooms">
+            </div>
+
+            <div class="form-group">
+                <label for="booking">Check-In</label>
+                <input type="date" class="form-control" id="cidate" required [(ngModel)]="booking.checkIn" name="cidate">
+            </div>
+
+            <div class="form-group">
+                <label for="booking">Check-Out</label>
+                <input type="date" class="form-control" id="codate" required [(ngModel)]="booking.checkOut" name="codate">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Confirm Booking</button>
+            </div>
+
+
+
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h4>You submitted successfully!</h4>
+        <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+    </div>
+</div>

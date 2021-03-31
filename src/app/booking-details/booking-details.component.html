@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>Reservation Details</h2>
+
+    <hr />
+    <div *ngIf="booking">
+        <div>
+            <label><b>Booking Id: </b></label> {{booking.bookingId}}
+        </div>
+        <div>
+            <label><b>Hotel Id: </b></label> {{booking.hotelId}}
+        </div>
+        <div>
+            <label><b>Guest Name: </b></label> {{booking.guestName}}
+        </div>
+        <div>
+            <label><b>Guest Email: </b></label> {{booking.guestEmail}}
+        </div>
+        <div>
+            <label><b>Guest Mobile: </b></label> {{booking.guestMobile}}
+        </div>
+        <div>
+            <label><b>Guest City: </b></label> {{booking.guestCity}}
+        </div>
+        <div>
+            <label><b>No of Guest: </b></label> {{booking.noOfGuest}}
+        </div>
+        <div>
+            <label><b>No of Rooms: </b></label> {{booking.noOfRooms}}
+        </div>
+        <div>
+            <label><b>CheckIn Date: </b></label> {{booking.checkIn}}
+        </div>
+        <div>
+            <label><b>CheckOut Date: </b></label> {{booking.checkOut}}
+        </div>
+        <div>
+            <label><b>Bill Price: </b></label> {{booking.billPrice}}
+        </div>
+        <div>
+            <label><b>Booking Status: </b></label>
+            <td *ngIf="booking.bookingStatus==1"><button type="button" class="btn btn-sm btn-outline-success py-0" style="font-size: 0.8em;">Accepted</button></td>
+            <td *ngIf="booking.bookingStatus==2"><button type="button" class="btn btn-sm btn-outline-danger py-0" style="font-size: 0.8em;">Cncelled</button></td>
+        </div>
+    </div>
+    <br>
+    <br>
+    <button (click)="list()" class="btn btn-primary">Back to Reservation List</button><br>
+</div>
